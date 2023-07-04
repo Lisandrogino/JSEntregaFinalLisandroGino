@@ -1,0 +1,26 @@
+$mainColor: #FAE1DC;
+$bodyColor:#D9D9DD;
+$textColor:#01161e;
+$gradient: linear-gradient(47deg, rgba(250,225,220,1) 45%, rgba(146,119,148,1) 91%); ;
+$fontmain: 'Playfair Display', serif;
+$fontsecondary: 'Dancing Script', cursive;
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Dancing Script', cursive;
+    font-family: 'Playfair Display', serif;
+   
+}
+
+body{
+    background-color: $bodyColor;
+}
+
+@import "header";
+@import "footer";
+@import "home";
+@import "client";
+@import "empresa";
+@import "productos";
+@import "responsive";

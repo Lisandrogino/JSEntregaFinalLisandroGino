@@ -1,0 +1,64 @@
+#body-container{
+    #footer{
+
+        background-color: $mainColor;
+        display: flex;
+        flex-direction: column;
+    
+        .footer-conteiner-conteiner{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+    
+            .footer-conteiner{
+                align-items: center;
+    
+                .footer-contact{
+                    margin-bottom: 10px;
+                    text-align: center;
+        
+                    .footer-text{
+                        font-family: 'Dancing Script', cursive;
+                        font-weight: 700;
+                    }
+                }
+    
+                .footer-social{
+                    margin: 15px 10px;
+            
+                    & .footer-icon{
+                        border: 1px solid black;
+                        border-radius: 50%;
+                        width: 50px;
+                        height: auto;
+                        margin: 5px;
+                    }
+
+                    
+                    & .footer__icon--facebook:hover{
+                        transform: scale(1.2);
+                    }
+            
+                    & .footer__icon--instagram:hover{
+                        transform: scale(1.2);
+                    }
+
+                    & .footer__icon--mail:hover{
+                        transform: scale(1.2);
+                    }
+
+                    & .footer__icon--whatsapp:hover{
+                        transform: scale(1.2);
+                    }
+                   
+                } 
+    
+            }        
+        }
+    
+        .footer-copyright {
+            display: flex;
+            justify-content: center; 
+        }
+    }
+}

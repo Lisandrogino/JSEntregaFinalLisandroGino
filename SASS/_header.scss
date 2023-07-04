@@ -1,0 +1,57 @@
+#body-container{
+    #hero{
+        /*position: fixed;*/
+        margin-top: 0;
+        font-family: 'Playfair Display', serif;
+        font-weight: 200;
+   
+        .nav-container{
+           display: flex;
+           justify-content: space-around;
+           align-items: center;
+           background-color: #FAE1DC;
+   
+           .logo img{
+               width: 40%;
+           }
+   
+           .nav-lavel, .nav-input {
+               display: none;
+           }
+   
+          
+           #nav-bar ul{
+               display: grid;
+               grid-auto-flow: column;
+               gap: 3em;
+               list-style-type: none; 
+               z-index: 100;
+               
+               .nav-icons{
+                   text-decoration: none;
+                   margin: 10px;
+                   color: black;
+                   --clippy: polygon(0 0, 0 0, 0 100%, 0% 100%);
+   
+                   &::after {
+                       content: "";
+                       display: block;
+                       background: black;
+                       width: 80%;
+                       margin-top: 3px;
+                       height: 3px;
+                       clip-path: var(--clippy);
+                       transition: clip-path .5s;
+   
+                   }
+                   &:hover {
+                       --clippy: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+                   }
+               }
+               
+           }
+        }
+   
+   }
+   
+}

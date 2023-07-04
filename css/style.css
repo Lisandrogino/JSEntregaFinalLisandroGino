@@ -1,0 +1,422 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Dancing Script', cursive;
+    font-family: 'Playfair Display', serif;
+   
+}
+
+body{
+    background-color: #D9D9DD;
+}
+
+/*-----------------------HEADER--------------*/
+
+#hero{
+    /*position: fixed;*/
+    margin-top: 0;
+    font-family: 'Playfair Display', serif;
+    font-weight: 200;
+    
+}
+
+#hero .nav-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #FAE1DC;
+}
+
+.logo img{
+    width: 40%;
+}
+
+#nav-bar ul{
+    display: grid;
+    grid-auto-flow: column;
+    gap: 3em;
+    list-style-type: none;  
+}
+
+.nav-icons{
+    text-decoration: none;
+    margin: 10px;
+    color: black;
+    --clippy: polygon(0 0, 0 0, 0 100%, 0% 100%);
+}
+
+.nav-icons::after {
+    content: "";
+    display: block;
+    background: black;
+    width: 80%;
+    margin-top: 3px;
+    height: 3px;
+    clip-path: var(--clippy);
+    transition: clip-path .5s;
+}
+
+.nav-icons:hover {
+    --clippy: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.nav-lavel, .nav-imput{
+    display: none;
+}
+
+/*--------------------INDEX--------------*/
+/*SECTION - CARRUCEL*/
+.slider-conteiner-conteiner{
+    margin: 20px; 
+    position: relative; 
+    z-index: -100;
+}
+
+/*SECTION - CARD PRESENTARION*/
+
+.cart-container{
+        margin: 10px 30px;
+}
+
+#card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 5%, 10%;
+    padding: 110px;
+
+    gap: 12px;
+    transition: gap 200ms;
+}
+
+#card:hover{
+    gap: 24px;
+}
+
+#card img {
+    width: 150px;
+    border-radius: 50%;
+}
+
+.romiPresentation{
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-weight: 700;
+
+}
+
+/*SECTION - PRODUCTOS DESTACADOS*/
+
+.productosDestacados-container-conteiner h2{
+    margin: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+   
+}
+
+.card-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    
+}
+
+.card-product{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+
+.card-product-img{
+    display: grid;
+    grid-row: 1fr;
+    grid-column: 1fr; 
+    justify-items: center;
+    align-items: center;   
+}
+
+.card-product-img img{
+    width: 30%;
+    height: auto;
+    border-radius: 50%;
+    border: #FAE1DC solid 5px; 
+    justify-items: center;
+    align-items: center; 
+}
+
+.card-product-content{
+    grid-row: 1fr;
+    grid-column: 1fr;
+    
+}
+
+.card-product-content{
+    text-align: center;
+    
+}
+
+/*-------------------------PRODUCTOS------------------------*/
+
+.product-conteiner{
+    position: relative;
+    z-index: -100;
+}
+
+/*----------------CLIENT-------------------------*/
+
+.title{
+    text-align: center;
+    margin: 20px;
+}
+
+.title-text{
+    font-family: 'Dancing Script', cursive;
+    font-weight: 700;
+    text-align: center;
+    margin: 20px;
+}
+
+.gallery{
+    padding-top: 20px;
+    padding-bottom: 10px;
+    margin: 20px;
+    display: grid;
+    grid-template-columns: repeat(3 , 1fr);
+    grid-auto-rows: auto;
+    justify-items: center;
+    gap: 50px;
+}
+
+.gallery__picture{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    background-color: #fff;
+    border: 10px solid #fff;
+    border-bottom: 60px solid #fff;
+    box-shadow: 15px 15px 15px rgb(0, 0, 0, 0.7);
+    border-radius: 8px;
+}
+
+.gallery__picture:hover{
+    transform: scale(1.1) rotate(5deg);
+    transition: 0.7s;
+}
+
+.gallery__picture img{
+    width: 60%;
+    height: auto;
+ }
+
+.galery__picture--p2:hover{
+    transform: scale(1.1) rotate(-5deg);
+    transition: 0.7s;  
+} 
+
+.galery__picture--p5:hover{
+    transform: scale(1.1) rotate(-5deg);
+    transition: 0.7s;  
+}
+
+.galery__picture--p8:hover{
+    transform: scale(1.1) rotate(-5deg);
+    transition: 0.7s;  
+} 
+
+/*---------------------EMPRESA-------------------*/
+
+.empresa__container{
+    position: relative;
+    z-index: -100;
+}
+
+.empresa__title{
+    text-align: center;
+    font-weight: 700px;
+    margin: 20px 0px 10px;
+}
+
+.empresa__text{
+    text-align: center;
+    margin: 20px 0px  10px;
+    font-family: 'Dancing Script';
+    font-weight: 700;
+}
+
+.empresa__bootstrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    flex-direction: column;
+}
+
+
+
+.empresa__card--card1{
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: -100;
+}
+
+.empresa__card--card2{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: -100;
+
+}
+
+
+/*----------------------FOOTER-------------------*/
+
+
+#footer{
+    background-color: #FAE1DC;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-conteiner-conteiner{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.footer-conteiner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.footer-contact{
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.footer-social{
+    margin: 15px 10px;
+   
+}
+
+.footer-social .footer-icon{
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+.footer-icon{
+    width: 50px;
+    height: auto;
+    margin: 5px;
+}
+
+.footer-icon:hover{
+    transform: scale(1.2);
+}
+
+.footer-copyright {
+    display: flex;
+    justify-content: center; 
+}
+
+.footer-text{
+    font-family: 'Dancing Script', cursive;
+    font-weight: 700;
+}
+
+/*---------------------RESPONSIVE----------------*/
+
+@media (max-width: 768px) {
+    
+   .nav-lavel{
+    display: block;
+    cursor: pointer;
+   }
+
+   #nav-bar ul{
+    position:fixed;
+    top: 80px;
+    bottom: 0;
+    background: #D9D9DD;
+    left: 0;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    clip-path: circle(0 at center );
+    transition: clip-path 1s ease-in-out;
+   }
+
+   .nav-imput:checked + #nav-bar ul{
+    clip-path: circle(100% at center); 
+}
+
+
+
+
+/*------------FOOTER------------------*/
+
+.footer-conteiner-conteiner{
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-conteiner{
+    align-items: center;
+}
+
+.footer-img{
+    display: none;
+}
+
+}
+
+/*-----------------------MAIN-------------------*/
+
+@media (max-width: 600px) {
+
+ #card{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 5%, 10%;
+        padding: 10px;
+    
+        gap: 12px;
+        transition: gap 200ms;
+    }
+
+    .cart-container{
+        margin: 0;
+}
+
+
+
+
+    .card-container{
+        display: flex;
+        flex-direction: column;
+       
+    }
+
+/*---------------CLIENT RESPONSIVE---------------*/
+
+.gallery{
+    grid-template-columns: 1fr;
+}
+
+
+}
