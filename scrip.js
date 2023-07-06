@@ -70,7 +70,7 @@ fetch('../data.json')
         <h3 class="card-tipoProducto">${elementoTienda.precio}</h3>
       </div>
         <div class="d-grid gap-2 col-6 mx-auto">
-        <button id="botonAgregarCarrito" "class=btn btn-secondary m-2 type="button">Agregar al Carrito</button>
+        <button id="botonAgregarCarrito-${elementoTienda.id}" "class=btn btn-secondary m-2 type="button">Agregar al Carrito</button>
         </div>
     </div>
   </div>
@@ -79,7 +79,7 @@ fetch('../data.json')
     // IMPORTANTE productContainer - representa el elemento en el HTML - y el elemento dentro del paréntesis es ele elemento creado en este caso el DIV que contiene cadatarjeta.
     productContainer.append(contenedor)
 
-    let botonAgregarCarrito = document.getElementById("botonAgregarCarrito")
+    let botonAgregarCarrito = document.getElementById(`botonAgregarCarrito-${elementoTienda.id}`)
 
     botonAgregarCarrito.addEventListener("click", ()=>{ carrito.push({
       tipoProducto: elementoTienda.tipoProducto,
@@ -110,10 +110,42 @@ verCarrito.addEventListener("click", ()=>{
 
   modalContainer.append(modalHeader)
   
-const botonCarrito = createElement("button")
+const botonCarrito = document.createElement("div");
 
 botonCarrito.innerHTML=
-`<button type="button" class="btn btn-secondary">Cerrar Carrito</button>`
+`<button type="button" class="btn btn-secondary">Cerrar Carrito</button>`;
+modalHeader.append(botonCarrito)
+
+//body
+
+carrito.forEach((elementoTienda)=>{
+  
+  let carritoContent = document.createElement("div")
+  carritoContent.className = "modal-content"
+  carritoContent.innerHTML =
+
+  `
+   <img src="${elementoTienda.img}">
+   <h4>${elementoTienda.nombre}</h4>
+   <p>${elementoTienda.precio}
+  `;
+
+  modalContainer.append(carritoContent)
+
+  //footer
+
+  //reduce calcula precio
+  const totalCarrito = carrito.reduce((acumulador, el)=>{ acumulador + el.precio, 0});
+
+  const totalCompra = document.createElement("div")
+  totalCompra.className ="modal-fotter"
+  totalCompra.innerHTML = `
+      <p>"El total de tu compra es: ${totalCompra}"</p>
+  `;
+  modalContainer.append(totalCompra)
+
+
+})
 
   
 })
