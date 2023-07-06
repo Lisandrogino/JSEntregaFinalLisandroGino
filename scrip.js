@@ -1,3 +1,6 @@
+const verCarrito = document.getElementById('verCarrito');
+const modalContainer = document.getElementById("modal-container")
+
 //console.log("hola, funciono de 10...!!!!")
 
 // class Producto
@@ -20,7 +23,7 @@
 
 
 
-let carrtioDeCompras = []
+let carrito = []
 
 
 //compruebo a modo de test los objetos que compone el array
@@ -40,7 +43,7 @@ let productContainer = document.getElementById("productContainer")
 
 //IMPORTANTE: se debe crear un forEach que recorra el array y cree el elemento por medio del innerHTML
 
-fetch('data.json')
+fetch('../data.json')
 .then((res)=>res.json())
 .then((data)=>{
 
@@ -78,7 +81,13 @@ fetch('data.json')
 
     let botonAgregarCarrito = document.getElementById("botonAgregarCarrito")
 
-    botonAgregarCarrito.addEventListener("click", agregarCarrito)
+    botonAgregarCarrito.addEventListener("click", ()=>{ carrito.push({
+      tipoProducto: elementoTienda.tipoProducto,
+      img: elementoTienda.img,
+      precio: elementoTienda.precio
+    })
+    console.log(carrito)
+  })
 
 })
 
@@ -87,21 +96,29 @@ fetch('data.json')
 })
 
 
+verCarrito.addEventListener("click", ()=>{
+
+  //test
+  console.log("estoy escuchando")
+
+  //header
+
+  const modalHeader = document.createElement("div")
+  modalHeader.className = "modal-header"
+  modalHeader.innerHTML =
+  `<h2 class="modalTile">Carrito de Compas</h2>`;
+
+  modalContainer.append(modalHeader)
+  
+const botonCarrito = createElement("button")
+
+botonCarrito.innerHTML=
+`<button type="button" class="btn btn-secondary">Cerrar Carrito</button>`
+
+  
+})
 
 
-function agregarCarrito(){
-    //test
-    console.log("agregado al carrito")
-
-    carrtioDeCompras.push()
-
-    //test carrito de compras push
-    console.log(carrtioDeCompras)
-    console.log(carrtioDeCompras.length)
-
-    
-    
-}
 
 
 
