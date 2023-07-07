@@ -74,7 +74,8 @@ fetch('../data.json')
       tipoProducto: elementoTienda.tipoProducto,
       img: elementoTienda.img,
       precio: elementoTienda.precio,
-      stock: elementoTienda.unidades
+      stock: elementoTienda.unidades,
+      cantidad: 1
     });
     }
 
@@ -166,19 +167,12 @@ carrito.forEach((elementoTienda)=>{
   //footer
 
   //reduce calcula precio
-  const totalCarrito = carrito.reduce((acumulador, el)=>{ acumulador + el.precio * el.cantidad, 0});
-
-  const totalCompra = document.createElement("div")
-  totalCompra.className ="modal-fotter"
-  totalCompra.innerHTML = `
-      <p>"El total de tu compra es: ${totalCompra}"</p>
-  `;
-  modalContainer.append(totalCompra)
+  
 
 
 })
 
-  
+calcularTotal()  
 }
 
 verCarrito.addEventListener("click", funcionCarrito);
@@ -213,6 +207,17 @@ const contadorCarrito = ()=>{
 //Guardar local storage
 const guardarLocalStorage = ()=>{
   localStorage.setItem("carrito", JSON.stringify(carrito))
+}
+
+function calcularTotal(){
+  const totalCarrito = carrito.reduce((acumulador, el)=> acumulador += el.precio * el.cantidad, 0);
+
+  const totalCompra = document.createElement("div")
+  totalCompra.className ="modal-fotter"
+  totalCompra.innerHTML = `
+      <p>"El total de tu compra es: ${totalCarrito}"S</p>
+  `;
+  modalContainer.append(totalCompra)
 }
 
 contadorCarrito()

@@ -67,6 +67,20 @@
             border: solid $bodyColor;
         }
        } 
+
+       .modalcontainer{
+
+            .modal-content{
+
+                width: 80%;
+                margin: 10%;
+                background-color: aqua;
+
+            }
+
+       
+
+       }
     }
 }
 }

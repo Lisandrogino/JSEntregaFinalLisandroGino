@@ -417,6 +417,11 @@ main .news .article .article__img {
 #body-container main .product-container .catalogue__container img:hover {
   border: solid #D9D9DD;
 }
+#body-container main .product-container .modalcontainer .modal-content {
+  width: 80%;
+  margin: 10%;
+  background-color: aqua;
+}
 
 @media (max-width: 768px) {
   #body-container {
