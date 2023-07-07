@@ -402,25 +402,51 @@ main .news .article .article__img {
   color: #01161e;
   font-size: 20px;
 }
-#body-container main .product-container .catalogue__container .manta__text {
+#body-container main .product-container .catalogue_container .manta__text {
   font-family: "Dancing Script", cursive;
 }
-#body-container main .product-container .catalogue__container .img__principal {
+#body-container main .product-container .catalogue_container .img__principal {
   width: 100%;
   height: auto;
   margin-bottom: 10px;
 }
-#body-container main .product-container .catalogue__container img {
+#body-container main .product-container .catalogue_container img {
   width: 50%;
   height: auto;
 }
-#body-container main .product-container .catalogue__container img:hover {
+#body-container main .product-container .catalogue_container img:hover {
   border: solid #D9D9DD;
 }
-#body-container main .product-container .modalcontainer .modal-content {
+#body-container main .product-container .modalContainer {
   width: 80%;
-  margin: 10%;
+  margin: 0 10%;
+  max-height: 88vh;
+  background-color: gray;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  overflow: auto;
+  z-index: 10;
+  top: 12vh;
+  scrollbar-color: none;
+}
+#body-container main .product-container .modalContainer .modal-header {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
   background-color: aqua;
+}
+#body-container main .product-container .modalContainer .modal-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
+  margin: 10px;
+}
+#body-container main .product-container .modalContainer .modal-content img {
+  height: 100px;
+  width: auto;
 }
 
 @media (max-width: 768px) {

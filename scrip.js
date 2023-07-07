@@ -71,7 +71,7 @@ fetch('../data.json')
       }else{
       carrito.push({
       id:elementoTienda.id,
-      tipoProducto: elementoTienda.tipoProducto,
+      nombre: elementoTienda.nombre,
       img: elementoTienda.img,
       precio: elementoTienda.precio,
       stock: elementoTienda.cantidad,
@@ -106,7 +106,7 @@ const funcionCarrito = ()=> {
 
   modalContainer.innerHTML = "";
 
-  //modalContainer.style.display = "flex"
+  modalContainer.style.display = "flex"
   
 
   //test
@@ -141,9 +141,9 @@ carrito.forEach((elementoTienda)=>{
 
       `
       <img src="${elementoTienda.img}">
-      <h4>${elementoTienda.nombre}</h4>
+      <h5>${elementoTienda.nombre}</h5>
       <p>${elementoTienda.precio}</p>
-      <p> Unidades: ${elementoTienda.unidades}</p>
+      <p> Unidades: ${elementoTienda.cantidad}</p>
       <p> Total por Producto: ${elementoTienda.cantidad * elementoTienda.precio}</p>
       `;
 
