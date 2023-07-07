@@ -74,7 +74,7 @@ fetch('../data.json')
       tipoProducto: elementoTienda.tipoProducto,
       img: elementoTienda.img,
       precio: elementoTienda.precio,
-      stock: elementoTienda.unidades,
+      stock: elementoTienda.cantidad,
       cantidad: 1
     });
     }
