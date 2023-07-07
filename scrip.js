@@ -1,30 +1,16 @@
+
+//capturo el elemento productContainer de HTML para luego crear los objetos en las cards que se mostraran en el HTML
+
+let productContainer = document.getElementById("productContainer")
 const verCarrito = document.getElementById('verCarrito');
 const modalContainer = document.getElementById("modal-container");
 const cantidadCarrtio = document.getElementById("cantidad-carrito");
 
 
 
-// array de objetos con las propiedades de la class Producto
-
-
-
 let carrito = JSON.parse(localStorage.getItem("carrito")) || []
 
 
-//compruebo a modo de test los objetos que compone el array
-
-//console.log(productosTienda)
-
-//capturo el elemento productContainer de HTML para luego crear los objetos en las cards que se mostraran en el HTML
-
-let productContainer = document.getElementById("productContainer")
-
-
-
-
-// test para ver que está capturando
-
-//console.log(productContainer)
 
 //IMPORTANTE: se debe crear un forEach que recorra el array y cree el elemento por medio del innerHTML
 
@@ -91,10 +77,19 @@ fetch('../data.json')
       stock: elementoTienda.unidades
     });
     }
+
+    
     //test agregar carrito:
     console.log(carrito)
     contadorCarrito()
     guardarLocalStorage()
+
+    Swal.fire({
+      icon: 'success',
+      title: 'Producto fue gregado al Carrito',
+      text: 'Gracias!',
+      
+    })
   })
 
 })
@@ -198,6 +193,12 @@ const  eliminarProductoCarrito = ()=>{
   contadorCarrito()
   funcionCarrito()
   guardarLocalStorage()
+
+  Swal.fire({
+    icon: 'error',
+    title: 'Eliminaste un Producto',
+    
+  })
 }
 
 //Nro indidador de la cantidad de Productos en el Carrito:
