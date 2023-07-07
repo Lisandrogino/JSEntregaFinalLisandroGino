@@ -5,7 +5,9 @@
         "nombre": "Manta de Polar Soft",
         "descripcion": "Manta de 1m por 0.75m, super suave de exelente calidad, con diseños exclusivos.",
         "img":"../assetsnav/productoalgodonprincipal-min.jpg",
-        "precio": 4900
+        "precio": 4900,
+        "unidades": 1
+        
 
     },
 
@@ -15,7 +17,8 @@
         "nombre": "Babero Bandana",
         "descripcion": "Babero tipo bandana de algodón y gabardina, con diseños originales y artesanales",
         "img":"../assetsnav/productobaberoprincipal-min.jpg",
-        "precio": 900
+        "precio": 900,
+        "unidades": 1
     },
 
     {
@@ -24,7 +27,8 @@
         "nombre": "Toallón Doble con capucha",
         "descripcion": "Toallón con capucha de algodón doble felpa, super absorvente, con capucha con diseños infantiles. Medidas de 1m por 1m.",
         "img":"../assetsnav/productotoallonprincipal.jpeg",
-        "precio": 4590
+        "precio": 4590,
+        "unidades": 1
     },
 
     {
@@ -33,6 +37,8 @@
         "nombre": "Set Babitas Toalla Doble Algodón",
         "descripcion": "Babita de algodón doble felpa, super absorvente, con diseños infantiles super tiernos e irrepetibles. Medidas de 35cm por 25cm.",
         "img":"../assetsnav/productosetbabitaprincipalrotada.png",
-        "precio": 865
+        "precio": 865,
+        "unidades":1
+
     }
 ]

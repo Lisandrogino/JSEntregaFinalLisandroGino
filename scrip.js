@@ -1,29 +1,14 @@
 const verCarrito = document.getElementById('verCarrito');
-const modalContainer = document.getElementById("modal-container")
+const modalContainer = document.getElementById("modal-container");
+const cantidadCarrtio = document.getElementById("cantidad-carrito");
 
-//console.log("hola, funciono de 10...!!!!")
 
-// class Producto
-
-//class Producto{
-
-  //  constructor(id, tipoProducto, nombre, descripcion, imagen, precio) {
-    //    this.id=id
-      //  this.tipoProducto = tipoProducto
-        //this.nombre = nombre;
-        //this.descripcion = descripcion;
-        //this.img = imagen
-        //this.precio = precio;
-        
-    //}
-
-//}
 
 // array de objetos con las propiedades de la class Producto
 
 
 
-let carrito = []
+let carrito = JSON.parse(localStorage.getItem("carrito")) || []
 
 
 //compruebo a modo de test los objetos que compone el array
@@ -81,12 +66,35 @@ fetch('../data.json')
 
     let botonAgregarCarrito = document.getElementById(`botonAgregarCarrito-${elementoTienda.id}`)
 
-    botonAgregarCarrito.addEventListener("click", ()=>{ carrito.push({
+    botonAgregarCarrito.addEventListener("click", ()=>{ 
+
+      //ver si el producto se repite:
+
+      const productoRepetido = carrito.some ((repetido)=> repetido.id === elementoTienda.id);
+      //test productoRepetido:
+      console.log(productoRepetido);
+
+      //Agregar cantidad al carrito:
+
+      if(productoRepetido){
+        carrito.map((prod)=>{
+          if (prod.id === elementoTienda.id){
+            prod.cantidad++
+          }
+        });
+      }else{
+      carrito.push({
+      id:elementoTienda.id,
       tipoProducto: elementoTienda.tipoProducto,
       img: elementoTienda.img,
-      precio: elementoTienda.precio
-    })
+      precio: elementoTienda.precio,
+      stock: elementoTienda.unidades
+    });
+    }
+    //test agregar carrito:
     console.log(carrito)
+    contadorCarrito()
+    guardarLocalStorage()
   })
 
 })
@@ -96,7 +104,14 @@ fetch('../data.json')
 })
 
 
-verCarrito.addEventListener("click", ()=>{
+const funcionCarrito = ()=> {
+
+ //este innerHTML evita que se repita el carrito muchas veces
+
+  modalContainer.innerHTML = "";
+
+  //modalContainer.style.display = "flex"
+  
 
   //test
   console.log("estoy escuchando")
@@ -116,26 +131,47 @@ botonCarrito.innerHTML=
 `<button type="button" class="btn btn-secondary">Cerrar Carrito</button>`;
 modalHeader.append(botonCarrito)
 
+botonCarrito.addEventListener("click", ()=>{
+  modalContainer.style.display = "none";
+})
+
 //body
 
 carrito.forEach((elementoTienda)=>{
   
   let carritoContent = document.createElement("div")
-  carritoContent.className = "modal-content"
-  carritoContent.innerHTML =
+      carritoContent.className = "modal-content"
+      carritoContent.innerHTML =
 
-  `
-   <img src="${elementoTienda.img}">
-   <h4>${elementoTienda.nombre}</h4>
-   <p>${elementoTienda.precio}
-  `;
+      `
+      <img src="${elementoTienda.img}">
+      <h4>${elementoTienda.nombre}</h4>
+      <p>${elementoTienda.precio}</p>
+      <p> Unidades: ${elementoTienda.unidades}</p>
+      <p> Total por Producto: ${elementoTienda.cantidad * elementoTienda.precio}</p>
+      `;
 
-  modalContainer.append(carritoContent)
+      modalContainer.append(carritoContent)
+      console.log(carrito.length);
+
+      //botón para eliminar productos
+
+    const eliminarProducto = document.createElement("Span")
+        eliminarProducto.innerHTML =
+        `<button type="button" class="btn btn-secondary btn-sm">Borrar Producto</button>`
+        eliminarProducto.className ="eliminarProducto"
+
+        carritoContent.append(eliminarProducto)
+
+        eliminarProducto.addEventListener("click", eliminarProductoCarrito);
+
+       
+
 
   //footer
 
   //reduce calcula precio
-  const totalCarrito = carrito.reduce((acumulador, el)=>{ acumulador + el.precio, 0});
+  const totalCarrito = carrito.reduce((acumulador, el)=>{ acumulador + el.precio * el.cantidad, 0});
 
   const totalCompra = document.createElement("div")
   totalCompra.className ="modal-fotter"
@@ -148,7 +184,38 @@ carrito.forEach((elementoTienda)=>{
 })
 
   
-})
+}
+
+verCarrito.addEventListener("click", funcionCarrito);
+
+const  eliminarProductoCarrito = ()=>{
+
+  const buscarPruductoId = carrito.find((el)=>el.id);
+
+  carrito = carrito.filter((carritoId)=>{
+    return carritoId !== buscarPruductoId
+  });
+  contadorCarrito()
+  funcionCarrito()
+  guardarLocalStorage()
+}
+
+//Nro indidador de la cantidad de Productos en el Carrito:
+
+const contadorCarrito = ()=>{
+  cantidadCarrtio.innerHTML = JSON.parse(localStorage.getItem("carritolength"));
+
+  const carritolength = carrito.length;
+  localStorage.setItem("carritolength", JSON.stringify(carritolength));
+}
+
+//Guardar local storage
+const guardarLocalStorage = ()=>{
+  localStorage.setItem("carrito", JSON.stringify(carrito))
+}
+
+contadorCarrito()
+
 
 
 
