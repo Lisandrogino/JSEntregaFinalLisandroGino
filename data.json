@@ -2,7 +2,7 @@
     {
         "id": 1,
         "tipoProducto": "Manta",
-        "nombre": "Manta de Polar Soft",
+        "nombre": "Manta doble Algodón",
         "descripcion": "Manta de 1m por 0.75m, super suave de exelente calidad, con diseños exclusivos.",
         "img":"../assetsnav/productoalgodonprincipal-min.jpg",
         "precio": 4900,
@@ -14,7 +14,7 @@
     {
         "id": 2,
         "tipoProducto": "Babero",
-        "nombre": "Babero Bandana",
+        "nombre": "Babero Tuzor",
         "descripcion": "Babero tipo bandana de algodón y gabardina, con diseños originales y artesanales",
         "img":"../assetsnav/productobaberoprincipal-min.jpg",
         "precio": 900,
@@ -26,7 +26,7 @@
         "tipoProducto": "Toallas, Toalloes y Babitas",
         "nombre": "Toallón Doble con capucha",
         "descripcion": "Toallón con capucha de algodón doble felpa, super absorvente, con capucha con diseños infantiles. Medidas de 1m por 1m.",
-        "img":"../assetsnav/productotoallonprincipal.jpeg",
+        "img":"../assetsnav/productotoallon2.jpeg",
         "precio": 4590,
         "cantidad": 1
     },
@@ -34,11 +34,59 @@
     {
         "id": 4,
         "tipoProducto": "Toallas, Toallones y Babitas",
-        "nombre": "Set Babitas Toalla Doble Algodón",
+        "nombre": "Babitas de Toalla y Algodón",
         "descripcion": "Babita de algodón doble felpa, super absorvente, con diseños infantiles super tiernos e irrepetibles. Medidas de 35cm por 25cm.",
         "img":"../assetsnav/productosetbabitaprincipalrotada.png",
         "precio": 865,
         "cantidad":1
+
+    },
+
+    {
+        "id": 5,
+        "tipoProducto": "Manta",
+        "nombre": "Manta Polarsoft",
+        "descripcion": "Manta de 1m por 0.75m, super suave de exelente calidad, con diseños exclusivos.",
+        "img":"../assetsnav/productopolarprincial-min.jpg",
+        "precio": 4900,
+        "cantidad": 1
+        
+
+    },
+
+    {
+        "id": 6,
+        "tipoProducto": "Muñecos",
+        "nombre": "Muñecos de Apego",
+        "descripcion": "Munecos de apego hechos a mano en hilo de algodón.",
+        "img":"../assetsnav/productoapegoprincipal.png",
+        "precio": 2200,
+        "cantidad": 1
+        
+
+    },
+
+    {
+        "id": 7,
+        "tipoProducto": "Osito",
+        "nombre": "Osito",
+        "descripcion": "Osito de abrigo de polar soft y forrado en interlok estampado.",
+        "img":"../assetsnav/productoosito2-min.jpg",
+        "precio": 7330,
+        "cantidad": 1
+        
+
+    },
+
+    {
+        "id": 8,
+        "tipoProducto": "Ropa Primera postura",
+        "nombre": "Ajuar Primera Postura",
+        "descripcion": "Set de primera postura de algodón pima, gorrito y body.",
+        "img":"../assetsnav/productosetprincipal-min.jpg",
+        "precio": 4900,
+        "cantidad": 1
+        
 
     }
 ]

@@ -32,7 +32,7 @@ fetch('../data.json')
     <div class="col">
     <div class="card">
       <img src="${elementoTienda.img}" class="card-img-top" alt="producto tienda">
-      <div class="card-body">
+      <div class="card-body h-5">
         <p class="card-identificador">Identificador: ${elementoTienda.id} </p>
         <h5 class="card-title">${elementoTienda.nombre}</h5>
         <p class="card-tipoProducto">${elementoTienda.tipoProducto}</p>
