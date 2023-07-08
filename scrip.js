@@ -95,8 +95,6 @@ fetch('../data.json')
 
 })
 
-
-
 })
 
 
@@ -161,15 +159,6 @@ carrito.forEach((elementoTienda)=>{
 
         eliminarProducto.addEventListener("click", eliminarProductoCarrito);
 
-       
-
-
-  //footer
-
-  //reduce calcula precio
-  
-
-
 })
 
 calcularTotal()  
@@ -207,15 +196,17 @@ const contadorCarrito = ()=>{
 //Guardar local storage
 const guardarLocalStorage = ()=>{
   localStorage.setItem("carrito", JSON.stringify(carrito))
+
 }
 
+//funcion calculadora del total
 function calcularTotal(){
   const totalCarrito = carrito.reduce((acumulador, el)=> acumulador += el.precio * el.cantidad, 0);
 
   const totalCompra = document.createElement("div")
   totalCompra.className ="modal-fotter"
   totalCompra.innerHTML = `
-      <p>"El total de tu compra es: ${totalCarrito}"S</p>
+      <p>El total de tu compra es: ${totalCarrito}</p>
   `;
   modalContainer.append(totalCompra)
 }

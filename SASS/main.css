@@ -421,7 +421,7 @@ main .news .article .article__img {
   width: 80%;
   margin: 0 10%;
   max-height: 88vh;
-  background-color: gray;
+  background-color: #D9D9DD;
   flex-direction: column;
   align-items: center;
   position: fixed;
@@ -429,12 +429,14 @@ main .news .article .article__img {
   z-index: 10;
   top: 12vh;
   scrollbar-color: none;
+  border-radius: 10px;
 }
 #body-container main .product-container .modalContainer .modal-header {
   display: flex;
   justify-content: space-around;
   width: 100%;
-  background-color: aqua;
+  background-color: #FAE1DC;
+  font-family: "Playfair Display", serif;
 }
 #body-container main .product-container .modalContainer .modal-content {
   display: flex;
@@ -443,15 +445,19 @@ main .news .article .article__img {
   align-items: center;
   width: 90%;
   margin: 10px;
+  font-family: "Dancing Script", cursive;
 }
 #body-container main .product-container .modalContainer .modal-content img {
   height: 100px;
   width: auto;
+  border-radius: 5px;
 }
 
 @media (max-width: 768px) {
   #body-container {
     /*--------------HOME-----------------*/
+    /*---------------PRODUCTOS-----------*/
+    /*--------------FOOTER---------------*/
   }
   #body-container #hero .nav-container .nav-lavel,
   #body-container #hero .nav-container .nav-imput {
@@ -481,10 +487,6 @@ main .news .article .article__img {
   }
   #body-container main .card-container #card .card__presentation {
     text-align: justify;
-  }
-  #body-container main .productosDestacados-conteiner-conteiner {
-    /*---------------PRODUCTOS-----------*/
-    /*--------------FOOTER---------------*/
   }
   #body-container main .productosDestacados-conteiner-conteiner #outstanding .card-conteiner-conteiner .card-conteiner {
     display: flex;
@@ -519,75 +521,89 @@ main .news .article .article__img {
     margin: 60px;
     text-align: center;
   }
-  #body-container main .productosDestacados-conteiner-conteiner #footer .footer-conteiner-conteiner {
-    display: flex;
-    flex-direction: column;
+  #body-container main .product-container .modalContainer {
+    width: 60%;
   }
-  #body-container main .productosDestacados-conteiner-conteiner #footer .footer-conteiner-conteiner .footer-conteiner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  #body-container main .productosDestacados-conteiner-conteiner #footer .footer-image,
-  #body-container main .productosDestacados-conteiner-conteiner #footer .footer-img {
-    display: none;
-  }
-  #body-container main .productosDestacados-conteiner-conteiner .footer-copyright {
-    display: flex;
-    justify-content: center;
-  }
-  #body-container main .card__grid .card__flex {
-    flex-direction: column;
-  }
-  #body-container main .product-container .banner__container .banner .banner__text {
-    display: none;
-  }
-  #body-container #footer {
+  #body-container main .product-container .modalContainer .modal-header {
     background-color: #FAE1DC;
-    display: flex;
     flex-direction: column;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+  }
+  #body-container main .product-container .modalContainer .modal-content {
+    flex-direction: column;
+    justify-content: center;
   }
   #body-container #footer .footer-conteiner-conteiner {
     display: flex;
     flex-direction: column;
   }
   #body-container #footer .footer-conteiner-conteiner .footer-conteiner {
-    align-items: center;
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
-  #body-container #footer .footer-conteiner-conteiner .footer-conteiner .footer-contact {
-    margin-bottom: 10px;
-    text-align: center;
-  }
-  #body-container #footer .footer-conteiner-conteiner .footer-conteiner .footer-contact-text {
-    font-family: "Dancing Script", cursive;
-    font-weight: 700;
-  }
-  #body-container #footer .footer-conteiner-conteiner .footer-conteiner .footer-social {
-    margin: 15px 10px;
-  }
-  #body-container #footer .footer-conteiner-conteiner .footer-conteiner .footer-social .footer-icon {
-    border: 1px solid black;
-    border-radius: 50%;
-    width: 50px;
-    height: auto;
-    margin: 5px;
-  }
-  #body-container #footer .footer-conteiner-conteiner .footer-conteiner .footer-social .footer__icon--facebook:hover {
-    transform: scale(1.2);
-  }
-  #body-container #footer .footer-conteiner-conteiner .footer-conteiner .footer-social .footer__icon--instagram:hover {
-    transform: scale(1.2);
-  }
-  #body-container #footer .footer-conteiner-conteiner #footer-image .footer-img {
+  #body-container #footer .footer-image,
+  #body-container #footer .footer-img {
     display: none;
   }
-  #body-container #footer .footer-copyright {
+  #body-container .footer-copyright {
     display: flex;
     justify-content: center;
   }
+  .card__grid .card__flex {
+    flex-direction: column;
+  }
+  .product-container .banner__container .banner .banner__text {
+    display: none;
+  }
 }
+#footer {
+  background-color: #FAE1DC;
+  display: flex;
+  flex-direction: column;
+}
+#footer .footer-conteiner-conteiner {
+  display: flex;
+  flex-direction: column;
+}
+#footer .footer-conteiner-conteiner .footer-conteiner {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+#footer .footer-conteiner-conteiner .footer-conteiner .footer-contact {
+  margin-bottom: 10px;
+  text-align: center;
+}
+#footer .footer-conteiner-conteiner .footer-conteiner .footer-contact-text {
+  font-family: "Dancing Script", cursive;
+  font-weight: 700;
+}
+#footer .footer-conteiner-conteiner .footer-conteiner .footer-social {
+  margin: 15px 10px;
+}
+#footer .footer-conteiner-conteiner .footer-conteiner .footer-social .footer-icon {
+  border: 1px solid black;
+  border-radius: 50%;
+  width: 50px;
+  height: auto;
+  margin: 5px;
+}
+#footer .footer-conteiner-conteiner .footer-conteiner .footer-social .footer__icon--facebook:hover {
+  transform: scale(1.2);
+}
+#footer .footer-conteiner-conteiner .footer-conteiner .footer-social .footer__icon--instagram:hover {
+  transform: scale(1.2);
+}
+#footer .footer-conteiner-conteiner #footer-image .footer-img {
+  display: none;
+}
+#footer .footer-copyright {
+  display: flex;
+  justify-content: center;
+}
+
 @media (max-width: 1200px) {
   #body-container main .product-container .banner__container .banner .banner__text {
     display: none;
@@ -611,5 +627,17 @@ main .news .article .article__img {
   }
   #body-container main .banner__container .banner .banner__text {
     display: none;
+  }
+}
+@media (max-width: 1018px) {
+  #body-container main .product-container .modalContainer {
+    width: 60vh;
+  }
+  #body-container main .product-container .modalContainer .modal-header {
+    background-color: #FAE1DC;
+  }
+  #body-container main .product-container .modalContainer .modal-content {
+    flex-direction: column;
+    justify-content: center;
   }
 }/*# sourceMappingURL=main.css.map */
